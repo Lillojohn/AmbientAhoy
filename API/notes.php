@@ -4,60 +4,99 @@ header("Access-Control-Allow-Origin: *");
 include "XMLMaker.php";
 include "database.php";
 include "getType.php";
+include_once "errorManager.php";
 
-$type = GetReturnType();
+$method = $_SERVER["REQUEST_METHOD"];
 
-$baseUrl = "http://www.timfalken.com/hr/annualnotes/notes";
-
-if(isset($_GET["id"]))
+if($method == "GET")
 {
-	if($type == "json")
+	$type = GetReturnType();
+
+	$baseUrl = "http://www.timfalken.com/hr/annualnotes/notes";
+
+	if(isset($_GET["id"]))
 	{
-		header("Content-Type:application/json");
+		if($type == "json")
+		{
+			header("Content-Type:application/json");
+			
+			echo json_encode(FinalizeChar($notes->GetRow($_GET["id"])));
+		}
 		
-		echo json_encode(FinalizeChar($notes->GetRow($_GET["id"])));
+		if($type == "xml")
+		{
+			header("Content-Type:application/xml");
+			echo '<?xml version="1.0" encoding="utf-8"?>';
+			
+			echo ToXMLObject("user", FinalizeChar($notes->GetRow($_GET["id"])));
+		}
 	}
-	
-	if($type == "xml")
+	else
 	{
-		header("Content-Type:application/xml");
-		echo '<?xml version="1.0" encoding="utf-8"?>';
+		$start = 0;
+		$limit = 100;
 		
-		echo ToXMLObject("user", FinalizeChar($notes->GetRow($_GET["id"])));
+		if(isset($_GET["start"]))
+			$start = $_GET["start"];
+			
+		if(isset($_GET["limit"]))
+			$limit = $_GET["limit"];
+
+		$all = $notes->BuildPage($baseUrl, $start, $limit);
+		
+		for($i = 0; $i < count($all->items); $i++)
+		{
+			$all->items[$i] = FinalizeChar($all->items[$i]);
+		}
+		
+		if($type == "json")
+		{
+			header("Content-Type:application/json");
+			echo $all->ConvertToJSON();
+		}
+		
+		if($type == "xml")
+		{
+			header("Content-Type:application/xml");
+			echo '<?xml version="1.0" encoding="utf-8"?>';
+			echo $all->ConvertToXML();
+		}	
 	}
 }
-else
+else if($method == "POST")
 {
-	$start = 0;
-	$limit = 100;
+	$data = file_get_contents("php://input");
+	$data = json_decode($data);
 	
-	if(isset($_GET["start"]))
-		$start = $_GET["start"];
+	if(!isset($data->title))
+		DisplayError("400", "Invalid Request.");
 		
-	if(isset($_GET["limit"]))
-		$limit = $_GET["limit"];
-
-	$all = $notes->BuildPage($baseUrl, $start, $limit);
+	if(!isset($data->problem))
+		DisplayError("400", "Invalid Request.");
 	
-	for($i = 0; $i < count($all->items); $i++)
-	{
-		$all->items[$i] = FinalizeChar($all->items[$i]);
-	}
+	if(!isset($data->solution))
+		DisplayError("400", "Invalid Request.");
 	
-	if($type == "json")
-	{
-		header("Content-Type:application/json");
-		echo $all->ConvertToJSON();
-	}
+	if(!isset($data->title))
+		DisplayError("400", "Invalid Request.");
 	
-	if($type == "xml")
-	{
-		header("Content-Type:application/xml");
-		echo '<?xml version="1.0" encoding="utf-8"?>';
-		echo $all->ConvertToXML();
-	}	
+	if(!isset($data->userId))
+		DisplayError("400", "Invalid Request.");
+	
+	if(!isset($data->userKey))
+		DisplayError("400", "Invalid Request.");
+	
+	if(!isset($data->eventId))
+		DisplayError("400", "Invalid Request.");
+		
+	if(!isset($data->imageUrls))
+		$data->imageUrls = [];
+	
+	if($users->GetRow($data->userId)->password == $data->userKey)
+		$notes->Create([$data->title, $data->problem, $data->solution, json_encode($data->imageUrls), $data->eventId, $data->userId]);
+	else
+		DisplayError("401", "Unauthorized.");
 }
-	
 	
 function FinalizeChar($raw)
 {	

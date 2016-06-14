@@ -1,5 +1,4 @@
 <?php 
-
 include_once "ApiCollection.php";
 
 $dbUsers = new DatabaseInfo("db.timfalken.com", "md300889db321903", "users", "md300889db321903", "zqrDXNJe");
