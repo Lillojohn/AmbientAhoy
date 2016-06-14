@@ -69,13 +69,13 @@ else if($method == "POST")
 	$data = json_decode($data);
 	
 	if(!isset($data->name))
-		DisplayError("405", "Invalid Request.");
+		DisplayError("400", "Invalid Request.");
 		
 	if(!isset($data->email))
-		DisplayError("405", "Invalid Request.");
+		DisplayError("400", "Invalid Request.");
 	
 	if(!isset($data->password))
-		DisplayError("405", "Invalid Request.");
+		DisplayError("400", "Invalid Request.");
 	
 	$notes->Create([$data->name, $data->email, md5($data->password)]);
 }
