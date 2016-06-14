@@ -77,7 +77,7 @@ else if($method == "POST")
 	if(!isset($data->password))
 		DisplayError("400", "Invalid Request.");
 	
-	$notes->Create([$data->name, $data->email, md5($data->password)]);
+	$users->Create([$data->name, $data->email, md5($data->password)]);
 }
 	
 	
