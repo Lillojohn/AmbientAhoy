@@ -77,7 +77,7 @@ else if($method == "POST")
 	if(!isset($data->password))
 		DisplayError("405", "Invalid Request.");
 	
-	$notes->Create([$data->name, $data->email, $data->password]);
+	$notes->Create([$data->name, $data->email, md5($data->password)]);
 }
 	
 	
