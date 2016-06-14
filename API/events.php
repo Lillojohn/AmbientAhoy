@@ -4,60 +4,87 @@ header("Access-Control-Allow-Origin: *");
 include "XMLMaker.php";
 include "database.php";
 include "getType.php";
+include_once "errorManager.php";
 
-$type = GetReturnType();
+$method = $_SERVER["REQUEST_METHOD"];
 
-$baseUrl = "http://www.timfalken.com/hr/annualnotes/events";
-
-if(isset($_GET["id"]))
+if($method == "GET")
 {
-	if($type == "json")
-	{
-		header("Content-Type:application/json");
-		
-		echo json_encode(FinalizeChar($events->GetRow($_GET["id"])));
-	}
-	
-	if($type == "xml")
-	{
-		header("Content-Type:application/xml");
-		echo '<?xml version="1.0" encoding="utf-8"?>';
-		
-		echo ToXMLObject("user", FinalizeChar($events->GetRow($_GET["id"])));
-	}
-}
-else
-{
-	$start = 0;
-	$limit = 100;
-	
-	if(isset($_GET["start"]))
-		$start = $_GET["start"];
-		
-	if(isset($_GET["limit"]))
-		$limit = $_GET["limit"];
+	$type = GetReturnType();
 
-	$all = $events->BuildPage($baseUrl, $start, $limit);
-	
-	for($i = 0; $i < count($all->items); $i++)
+	$baseUrl = "http://www.timfalken.com/hr/annualnotes/events";
+
+	if(isset($_GET["id"]))
 	{
-		$all->items[$i] = FinalizeChar($all->items[$i]);
+		if($type == "json")
+		{
+			header("Content-Type:application/json");
+			
+			echo json_encode(FinalizeChar($events->GetRow($_GET["id"])));
+		}
+		
+		if($type == "xml")
+		{
+			header("Content-Type:application/xml");
+			echo '<?xml version="1.0" encoding="utf-8"?>';
+			
+			echo ToXMLObject("user", FinalizeChar($events->GetRow($_GET["id"])));
+		}
 	}
-	
-	if($type == "json")
+	else
 	{
-		header("Content-Type:application/json");
-		echo $all->ConvertToJSON();
+		$start = 0;
+		$limit = 100;
+		
+		if(isset($_GET["start"]))
+			$start = $_GET["start"];
+			
+		if(isset($_GET["limit"]))
+			$limit = $_GET["limit"];
+
+		$all = $events->BuildPage($baseUrl, $start, $limit);
+		
+		for($i = 0; $i < count($all->items); $i++)
+		{
+			$all->items[$i] = FinalizeChar($all->items[$i]);
+		}
+		
+		if($type == "json")
+		{
+			header("Content-Type:application/json");
+			echo $all->ConvertToJSON();
+		}
+		
+		if($type == "xml")
+		{
+			header("Content-Type:application/xml");
+			echo '<?xml version="1.0" encoding="utf-8"?>';
+			echo $all->ConvertToXML();
+		}	
 	}
+}	
+else if($method == "POST")
+{
+	$data = file_get_contents("php://input");
+	$data = json_decode($data);
 	
-	if($type == "xml")
-	{
-		header("Content-Type:application/xml");
-		echo '<?xml version="1.0" encoding="utf-8"?>';
-		echo $all->ConvertToXML();
-	}	
+	if(!isset($data->name))
+		DisplayError("400", "Invalid Request.");
+		
+	if(!isset($data->date))
+		DisplayError("400", "Invalid Request.");
+	
+	if(!isset($data->userId))
+		DisplayError("400", "Invalid Request.");
+	
+	if(!isset($data->userKey))
+		DisplayError("400", "Invalid Request.");
+	
+	if($users->GetRow($data->userId)->password == $data->userKey)
+		$events->Create([$data->name, $data->date]);
+	else
+		DisplayError("401", "Unauthorized.");
 }
-	
 	/*CREATE:
 	$datetime1 = new DateTime(); //nu
 	$event->date = $datetime1->format("d-m");

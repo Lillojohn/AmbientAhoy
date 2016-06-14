@@ -69,25 +69,25 @@ else if($method == "POST")
 	$data = json_decode($data);
 	
 	if(!isset($data->title))
-		DisplayError("405", "Invalid Request.");
+		DisplayError("400", "Invalid Request.");
 		
 	if(!isset($data->problem))
-		DisplayError("405", "Invalid Request.");
+		DisplayError("400", "Invalid Request.");
 	
 	if(!isset($data->solution))
-		DisplayError("405", "Invalid Request.");
+		DisplayError("400", "Invalid Request.");
 	
 	if(!isset($data->title))
-		DisplayError("405", "Invalid Request.");
+		DisplayError("400", "Invalid Request.");
 	
 	if(!isset($data->userId))
-		DisplayError("405", "Invalid Request.");
+		DisplayError("400", "Invalid Request.");
 	
 	if(!isset($data->userKey))
-		DisplayError("405", "Invalid Request.");
+		DisplayError("400", "Invalid Request.");
 	
 	if(!isset($data->eventId))
-		DisplayError("405", "Invalid Request.");
+		DisplayError("400", "Invalid Request.");
 		
 	if(!isset($data->imageUrls))
 		$data->imageUrls = [];
@@ -95,7 +95,7 @@ else if($method == "POST")
 	if($users->GetRow($data->userId)->password == $data->userKey)
 		$notes->Create([$data->title, $data->problem, $data->solution, json_encode($data->imageUrls), $data->eventId, $data->userId]);
 	else
-		DisplayError("405", "Invalid Request.");
+		DisplayError("401", "Unauthorized.");
 }
 	
 function FinalizeChar($raw)
