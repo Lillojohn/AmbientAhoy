@@ -1,7 +1,6 @@
 (function (){
     var init = function(){
         ajaxloadEvents();
-        $('.event').on("click", clickAnimation);
     };
 
     window.addEventListener('load', init);
@@ -13,11 +12,17 @@ function ajaxloadEvents(){
     $.ajax({
         url: "http://timfalken.com/hr/annualnotes/events",
         accepts: "json",
-        success: loadEvents
+        success: loadEvents,
+        complete: addClickHandler
     })
 }
 
+function addClickHandler(){
+    $('.event').on("click", clickAnimation);
+}
+
 function loadEvents(data){
+    console.log(data);
     data.items.map(item => createEvents(item));
 
 
@@ -28,13 +33,14 @@ function createEvents(object){
         "<h1>"+ object.name +"</h1>" +
         "<img src='hellokitty.png' />" +
         "<div class='clickAnimation'></div></section>"
-    console.log(event)
     $('#events').append(event);
 }
 
 
 
 function clickAnimation(e) {
+    console.log('oi')
+
     var t1 = new TimelineLite();
     var positionButton = $(this).offset();
     var relativeClickY = event.pageY - positionButton.top;
@@ -50,4 +56,5 @@ function clickAnimation(e) {
     setTimeout(function () {
         $(".clickAnimation").replaceWith(originalClickAnimation);
     }, 700);
+
 }
