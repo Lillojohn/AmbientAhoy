@@ -43,7 +43,7 @@ function loadEvents(data){
 function createEvents(object){
     var event = "<section id='"+ object.id +"' class='event shadow'>" +
         "<h1>"+ object.name +"</h1>" +
-        "<img src='hellokitty.png' />" +
+        "<img src='img/hellokitty.png' />" +
         "<div class='clickAnimation'></div></section>"
     $('#events').append(event);
 }
