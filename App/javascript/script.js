@@ -41,22 +41,24 @@ function createEvent() {
             "name": "EVENTNAME",
             "date": "D-M",
             "userId": 1,
-            "userKey": "MD5"
+            "userKey": "202cb962ac59075b964b07152d234b70"
         }
     })
 }
 
 function createUser() {
     $.ajax({
-        url: "http://timfalken.com/hr/annualnotes/notes",
+        url: "http://timfalken.com/hr/annualnotes/users",
         method: "POST",
         data: {
-            "name":"USERNAME",
-            "email":"EMAIL",
-            "password":"PASSWORD"
+            "name":"Lillojohn",
+            "email":"johnyemanuels@hotmail.com",
+            "password":"132456"
         }
     })
 }
+
+createUser();
 
 
 function addClickHandler() {
@@ -66,13 +68,8 @@ function addClickHandler() {
 function loadEvents(data) {
     console.log(data);
     data.items.map(item => createEvents(item));
-
-
 }
 
-function test(){
-
-}
 
 function createEvents(object) {
     var event = "<section id='" + object.id + "' class='event shadow'>" +
