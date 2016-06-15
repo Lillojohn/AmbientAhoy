@@ -2,14 +2,8 @@
     font-family: Manteka;
     src: url("manteka.ttf"); }
 
-
-.formBox {
-  padding: 50px;
-  background-color: rgba(38, 65, 65, 0.19);
-}
-
 #notice {
-  margin-top: 15vh;
+  margin-top: 20vh;
 }
 
 #notice p{
@@ -35,38 +29,23 @@
 #registerForm{
   margin-left: 230px;
   margin-top: 5vh;
-  width: 80%;
-  margin-left: auto;
-  margin-right: auto;
 
 }
 
 .inputField{
-  height: 5vh;
-  width: 100%;
+  width: 500px;
   margin-bottom: 5px;
   border-top: none;
   border-right: none;
   border-left: none;
   border-bottom: 2px solid black;
-  font-size: 50px;
-  background-color: rgba(38, 65, 65, 0.06);
-}
-
-.inputField::-webkit-input-placeholder{
-  color: rgba(34, 58, 58, 0.18);
-}
-
-::-webkit-input-placeholder { /* WebKit, Blink, Edge */
-    color: #000000;
-}
-
-.button{
   font-family: Manteka, serif;
   font-size: 50px;
-  background-color: #77c9c9;
+}
+
+#registerButton{
+  font-family: Manteka, serif;
+  font-size: 50px;
+  background-color: #FFFFFF;
   border: none;
-  width: 100%;
-  border-radius: 5px;
-  color: #FFFFFF;
 }
