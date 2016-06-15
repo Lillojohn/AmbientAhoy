@@ -188,6 +188,20 @@ class ApiCollection
 		return $results;
 	}
 	
+	function CountWhere($whereStr)
+	{
+		$where = $this->Where($whereStr);
+		if($where == null)
+			return 0;
+		else
+			return count($where);
+	}
+	
+	function ExistsWhere($whereStr)
+	{
+		return $this->Where($whereStr) !== null;
+	}
+	
 	function Where($whereStr)
 	{
 		$link = $this->Connect();
