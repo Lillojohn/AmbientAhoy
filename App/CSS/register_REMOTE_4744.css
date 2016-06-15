@@ -2,7 +2,6 @@
     font-family: Manteka;
     src: url("manteka.ttf"); }
 
-
 #notice {
   margin-top: 20vh;
 }
@@ -31,7 +30,6 @@
   margin-left: 230px;
   margin-top: 5vh;
 
-
 }
 
 .inputField{
@@ -43,18 +41,11 @@
   border-bottom: 2px solid black;
   font-family: Manteka, serif;
   font-size: 50px;
-  background-color: rgba(38, 65, 65, 0.06);
 }
 
-::-webkit-input-placeholder { /* WebKit, Blink, Edge */
-    color: #000000;
-}
-
-.button{
+#registerButton{
   font-family: Manteka, serif;
   font-size: 50px;
-  background-color: #77c9c9;
+  background-color: #FFFFFF;
   border: none;
-  width: 200px;
-  border-radius: 5px;
 }
