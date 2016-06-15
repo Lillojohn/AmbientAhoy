@@ -70,6 +70,10 @@ function loadEvents(data) {
 
 }
 
+function test(){
+
+}
+
 function createEvents(object) {
     var event = "<section id='" + object.id + "' class='event shadow'>" +
         "<h1>" + object.name + "</h1>" +
