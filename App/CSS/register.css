@@ -2,9 +2,15 @@
     font-family: Manteka;
     src: url("manteka.ttf"); }
 
-#registerForm{
-  margin-left: 230px;
+.formBox{
+  width: 600px;
+  height: 300px;
+  margin-left: 210px;
   margin-top: 500px;
+  margin-right: 500px;
+  padding: 50px;
+  padding-right: 1px;
+  background-color: rgba(38, 65, 65, 0.19);
 }
 
 .inputField{
@@ -16,11 +22,18 @@
   border-bottom: 2px solid black;
   font-family: Manteka, serif;
   font-size: 50px;
+  background-color: rgba(38, 65, 65, 0.06);
 }
 
-#registerButton{
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color: #000000;
+}
+
+.button{
   font-family: Manteka, serif;
   font-size: 50px;
-  background-color: #FFFFFF;
+  background-color: #77c9c9;
   border: none;
+  width: 200px;
+  border-radius: 5px;
 }

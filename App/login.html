@@ -2,8 +2,8 @@
 <head>
 <title>Log In</title>
 <link href="CSS/reset.css" rel="stylesheet"/>
-<link href="CSS/styles.css" rel="stylesheet"/>
 <link href="CSS/style.css" rel="stylesheet"/>
+<link href="CSS/register.css" rel="stylesheet"/>
 </head>
 
 <body>
@@ -26,13 +26,14 @@
     </ul>
 </header>
 
-<h2>Log In!</h2>
-<form>
-Gebruikersnaam
-<input type="text" name="username">
-Wachtwoord
-<input type="password" name="username">
-<input type="Submit" value="inloggen">
+<form method="POST">
+  <div class="formBox shadow">
+    <input class="inputField" type="email" name="email" placeholder="Email"/>
+    <br>
+    <input class="inputField" type="password" name="wachtwoord" placeholder="Wachtwoord"/>
+    <br><br>
+    <input class="button shadow" type="submit" value="Login"/>
+  </div>
 </form>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
