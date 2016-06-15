@@ -76,8 +76,11 @@ else if($method == "POST")
 	
 	if(!isset($data->password))
 		DisplayError("400", "Invalid Request.");
-	
-	$users->Create([$data->name, $data->email, md5($data->password), 0]);
+		
+	if($users->Where("`email`='$data->email'") == null)
+		$users->Create([$data->name, $data->email, md5($data->password), 0]);
+	else
+		DisplayError("400", "Invalid Request.");	
 }
 	
 	

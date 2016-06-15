@@ -46,19 +46,7 @@ function createEvent() {
     })
 }
 
-function createUser() {
-    $.ajax({
-        url: "http://timfalken.com/hr/annualnotes/users",
-        method: "POST",
-        data: {
-            "name":"Lillojohn",
-            "email":"johnyemanuels@hotmail.com",
-            "password":"132456"
-        }
-    })
-}
 
-createUser();
 
 
 function addClickHandler() {
