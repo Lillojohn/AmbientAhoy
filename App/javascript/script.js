@@ -29,6 +29,19 @@ function createNote(){
     })
 }
 
+function createEvent(){
+    $.ajax({
+        "title" : "test",
+        "problem" : "need to test POST",
+        "solution" : "this, hopefully",
+        "imageUrls" : [],
+        "eventId" : 1,
+        "userId" : 1,
+        "userKey" : "202cb962ac59075b964b07152d234b70"
+    })
+}
+
+
 function addClickHandler(){
     $('.event').on("click", clickAnimation);
 }
