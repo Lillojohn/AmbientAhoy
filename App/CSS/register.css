@@ -3,6 +3,17 @@
     src: url("manteka.ttf"); }
 
 
+.formBox {
+  width: 600px;
+  height: 300px;
+  margin-left: 210px;
+  margin-top: 500px;
+  margin-right: 500px;
+  padding: 50px;
+  padding-right: 1px;
+  background-color: rgba(38, 65, 65, 0.19);
+}
+
 #notice {
   margin-top: 20vh;
 }
