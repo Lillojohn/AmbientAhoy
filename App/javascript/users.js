@@ -3,16 +3,6 @@
         $('#registerForm').on('submit', createUser);
     };
 
-<<<<<<< HEAD
-function createUser() {
-    $.ajax({
-        url: "http://timfalken.com/hr/annualnotes/users",
-        method: "POST",
-        dataType: "json",
-        data: '{"name":"John","email":"johnyemanuels@hotmailz.nl","password":"132456"}',
-        complete: function(data){
-            console.log(data)
-=======
     window.addEventListener('load', init);
 
 })();
@@ -42,8 +32,7 @@ function createUser(e) {
 
         } else {
             $('#notice p').text("Niet alles is goed ingevuld");
-            TweenLite.from($('#notice p'), 0.2, {opacity: 0,  ease: Power2.easeOut});
->>>>>>> users
+            TweenLite.from($('#notice p'), 0.2, {opacity: 0,  ease: Power2.easeOut})
         }
     } else {
         $('#notice p').text("Je hebt al een account gemaakt");
