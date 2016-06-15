@@ -3,7 +3,7 @@
     src: url("manteka.ttf");
 }
 
-p, pre, ul, li {
+p, pre, ul, li, form, input {
     font-family: 'Open Sans', sans-serif;
 }
 
