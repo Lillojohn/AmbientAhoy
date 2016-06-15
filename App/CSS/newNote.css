@@ -1,0 +1,21 @@
+#fileUpload{
+  font-size: 40px
+}
+
+#title{
+  font-size: 50px;
+}
+
+#textField{
+  font-size: 50px;
+  width: 608px;
+  min-height: 300px;
+  max-height: 500px;
+}
+
+.input{
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 2px solid black;
+}

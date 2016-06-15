@@ -3,7 +3,7 @@
     src: url("manteka.ttf"); }
 
 .formBox{
-  width: 600px;
+  min-width: 600px;
   height: 300px;
   margin-left: 210px;
   margin-top: 500px;
@@ -34,6 +34,6 @@
   font-size: 50px;
   background-color: #77c9c9;
   border: none;
-  width: 200px;
+  min-width: 200px;
   border-radius: 5px;
 }

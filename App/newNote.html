@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Nieuwe notitie</title>
+
+    <link href="CSS/reset.css" rel="stylesheet"/>
+    <link href="CSS/style.css" rel="stylesheet"/>
+    <link href="CSS/register.css" rel="stylesheet"/>
+    <link href="CSS/newNote.css" rel="stylesheet"/>
+  </head>
+
+  <body>
+    <header>
+      <button id="button_menu"></button>
+      <h1>CleanShot</h1>
+      <ul>
+        <a href="index.html">
+          <li>Home</li>
+        </a>
+        <a href="events.html">
+          <li>Events</li>
+        </a>
+        <a href="login.html">
+          <li>Login</li>
+        </a>
+        <a href="register.html">
+          <li>Register</li>
+        </a>
+      </ul>
+    </header>
+
+    <form>
+        <input class="input" id="title" type="name" name="title" placeholder="Titel"/>
+        <br><br>
+        <textarea class="input" id="textField" placeholder="Beschrijving"></textarea>
+        <br>
+        <input id="fileUpload" type="file" name"imageUpload"/>
+        <br><br>
+        <input class="button" type="submit" value="Notitie aanmaken"/>
+    </form>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenLite.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TimelineLite.min.js"></script>
+    <script src="javascript/navigation.js"></script>
+    <script src="javascript/users.js"></script>
+  </body>
+</html>
