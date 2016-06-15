@@ -1,12 +1,33 @@
+(function () {
+    var init = function () {
+        $('#registerForm').on('submit', createUser);
+    };
 
-function createUser() {
-    $.ajax({
-        url: "http://timfalken.com/hr/annualnotes/users",
-        method: "POST",
-        dataType: "json",
-        data: '{"name":"John","email":"johnyemanuels@hotmail.nl","password":"132456"}',
-        complete: function(data){
-            console.log(data)
-        }
-    })
+    window.addEventListener('load', init);
+
+})();
+
+function createUser(e) {
+    e.preventDefault();
+    var name = $('#name').val();
+    var email = $('#email').val();
+    var password = $('#password').val();
+
+    if( (name != null && name != "") &&
+        (email != null && email != "") &&
+        (password != null && password != "")){
+
+        $.ajax({
+            url: "http://timfalken.com/hr/annualnotes/users",
+            method: "POST",
+            dataType: "json",
+            data: '{"name": "'+ name +'","email":"'+ email +'","password":"'+ password +'"}'
+        })
+
+    } else {
+
+    }
+
+
 }
+
