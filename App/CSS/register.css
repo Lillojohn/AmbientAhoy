@@ -2,9 +2,34 @@
     font-family: Manteka;
     src: url("manteka.ttf"); }
 
+#notice {
+  margin-top: 20vh;
+}
+
+#notice p{
+  font-size: 50px;
+  text-align: center;
+  color: #ff9c8b;
+  height: 5vh;
+}
+
+#login {
+  margin-top: 5vh;
+}
+
+#login p {
+  text-align: center;
+}
+
+#login p a {
+  color: #77c9c9;
+  font-size: 50px;
+}
+
 #registerForm{
   margin-left: 230px;
-  margin-top: 500px;
+  margin-top: 5vh;
+
 }
 
 .inputField{
