@@ -26,11 +26,17 @@
         </a>
     </ul>
 </header>
+<!-- Dit moet worden laten zien als er niet is ingelogd.-->
+<h1 id="homeTitle">Welkom bij Cleanshot!</h1><br>
+<h2 id="homeSub">Log in en bekijk notities voor toekomstige evenementen in Ahoy!</h2><br>
 
-<h1>Welkom bij Cleanshot!</h1><br>
-<h2>Log in en bekijk notities voor toekomstige evenementen in Ahoy</h2><br>
-<button href="login.html">Log in</button> <br>
-<button href="register.html">Registreer></button>
+<a href="login.html"><div class="boxButton"><p class="homeButton">Log in!</p></div></a>
+<a href="register.html"><div class="boxButton"> <p class="homeButton" >Registreer</p></div></a>
+
+<!--dit moet worden laten zien als er wel is ingelogd.-->
+<h1 id="homeTitle">Welkom <!--Hier de naam van de gebruiker-->!</h1>
+<h2 id="homeSub">Ga naar de evenementen pagina om te kijken naar notities die gemaakt zijn per evenement. Als je klaar bent log dan uit. Heeft u vragen stuur dan een email naar ahoyadmin@ahoy.nl</h2>
+<div class="boxButton"><p class="homeButton">Log Uit</p></div><!--deze knop moet de sessie eindigen en dus de gebruiker uitloggen.-->
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
