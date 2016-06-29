@@ -4,6 +4,7 @@
 <link href="CSS/reset.css" rel="stylesheet"/>
 <link href="CSS/style.css" rel="stylesheet"/>
 <link href="CSS/register.css" rel="stylesheet"/>
+<link href="CSS/login.css" rel="stylesheet"/>
 </head>
 
 <body>
@@ -26,14 +27,18 @@
     </ul>
 </header>
 
+
 <section id="login">
     <p><a href="register.html">Heb je nog geen account?</a></p>
 </section>
-<form class="form" method="POST">
+<section id="notice">
+    <p></p>
+</section>
+<form id="formLogin" class="form" method="POST">
   <div class="formBox shadow">
-    <input class="inputField" type="email" name="email" placeholder="Email"/>
+    <input id="email" class="inputField" type="email" name="email" placeholder="Email"/>
     <br>
-    <input class="inputField" type="password" name="wachtwoord" placeholder="Wachtwoord"/>
+    <input id="password" class="inputField" type="password" name="wachtwoord" placeholder="Wachtwoord"/>
     <br><br>
     <input class="button shadow" type="submit" value="Login"/>
   </div>
@@ -44,6 +49,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenLite.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TimelineLite.min.js"></script>
 <script src="javascript/navigation.js"></script>
+<script src="javascript/cookie.js"></script>
+<script src="javascript/login.js"></script>
 </body>
 
 </html>
