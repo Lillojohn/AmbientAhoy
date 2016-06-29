@@ -8,64 +8,72 @@
         -->
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title>Evenement</title>
-  <link href="CSS/reset.css" rel="stylesheet"/>
-  <link href="CSS/styles.css" rel="stylesheet"/>
-  <link href="CSS/style.css" rel="stylesheet"/>
+    <meta charset="UTF-8">
+    <title>Evenement</title>
+    <link href="CSS/reset.css" rel="stylesheet"/>
+    <link href="CSS/styles.css" rel="stylesheet"/>
+    <link href="CSS/style.css" rel="stylesheet"/>
 </head>
 <body>
-  <header>
-      <button id="button_menu"></button>
-      <h1>CleanShot</h1>
-      <ul>
-          <a href="index.html">
-              <li>Home</li>
-          </a>
-          <a id="loginPagina" href="login.html">
-              <li>Login</li>
-          </a>
-          <a id="registratiePagina" href="register.html">
-              <li>Register</li>
-          </a>
-      </ul>
-  </header>
-  <div id="banner">
+<header>
+    <button id="button_menu"></button>
+    <h1>CleanShot</h1>
+    <ul>
+        <a href="index.html">
+            <li>Home</li>
+        </a>
+        <a id="loginPagina" href="login.html">
+            <li>Login</li>
+        </a>
+        <a id="registratiePagina" href="register.html">
+            <li>Register</li>
+        </a>
+    </ul>
+</header>
+<div id="banner">
     <img id="bannerImg" src="img/hellokitty.png"/> <!-- De banner img moet dynamisch worden geladen per evenement-->
-  </div>
-  <div id="details"><!--de supervisor en de schoonmakers per evenement moeten dynamisch er in worden geladen   -->
-    <p>Datum: 16-03-2017</p><br>
+</div>
+<div id="details"><!--de supervisor en de schoonmakers per evenement moeten dynamisch er in worden geladen   -->
+    <p id="Datum">Datum: 16-03-2017</p><br>
     <p>Supervisor: Rimmert</p> <br>
     <p>Schoonmakers: Andreas, Tim, Johny, Amber</p>
-  </div>
-  <main>
-  <section id="notes"><!-- Hier moeten dynamisch de notities in worden geladen en linken naar detail paginas van de desbetreffende notitie-->
-                      <a id="noteLink" href="noteDetail.html">
-                      <div id="note">
-                      <div id="noteDetails">
-                      <p id="noteTitle">Title:Beker omgevallen</p><br>
-                      <p id="noteAutTime">Author: Andreas | Time: 12:45</p>
-                      </div>
-                      </div>
-                      </a>
+</div>
+<main>
+    <section id="notes">
+        <!-- Hier moeten dynamisch de notities in worden geladen en linken naar detail paginas van de desbetreffende notitie-->
+        <a class="noteLink" href="noteDetail.html">
+            <div class="note">
+                <div class="noteDetails">
+                    <p class="noteTitle">Title:Beker omgevallen</p><br>
+                    <p class="noteAutTime">Author: Andreas | Time: 12:45</p>
+                </div>
+            </div>
+        </a>
 
-                      <div id="note">
-                      <div id="noteDetails">
-                      <p id="noteTitle">Title:Nog meer afval</p><br>
-                      <p id="noteAutTime">Author: Tim | Time: 13:33</p>
-                      </div>
-                      </div>
-  </section>
+        <a class="noteLink" href="noteDetail.html">
+            <div class="note">
+                <div class="noteDetails">
+                    <p class="noteTitle">Title:Nog meer afval</p><br>
+                    <p class="noteAutTime">Author: Tim | Time: 13:33</p>
+                </div>
+            </div>
+        </a>
 
-  <a href="newNote.html"><button id=placeNewNote>+</button></a>
+    </section>
 
-  </main>
+    <a href="newNote.html">
+        <button id=placeNewNote>+</button>
+    </a>
+
+</main>
 
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenLite.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TimelineLite.min.js"></script>
-  <script src="javascript/navigation.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenLite.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TimelineLite.min.js"></script>
+<script src="javascript/cookie.js"></script>
+<script src="javascript/navigation.js"></script>
+<script src="javascript/eventPage.js"></script>
 </body>
 </html>
