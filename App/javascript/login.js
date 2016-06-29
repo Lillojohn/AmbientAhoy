@@ -35,6 +35,9 @@ function login(e){
             if(item.email == emailValue){
                 succesLogin(item.name);
                 loginSuccess = true;
+                setTimeout(function(){
+                    window.location.href = 'index.html';
+                }, 500);
             }
         })
         if(loginSuccess == false){

@@ -57,13 +57,13 @@ main #events {
       {
         font-size: 50px;
       }
-      #homeTitle
+      .homeTitle
       {
         font-size: 60px;
         text-align: center;
         margin-top: 5%;
       }
-      #homeSub
+      .homeSub
       {
         font-size: 45px;
         margin-top: 5%;
