@@ -55,7 +55,7 @@ function editInfo(){
 
 
     itemInfo.notes.map(item => {
-        $('#notes').append('<a class="noteLink" href="noteDetail.html">' +
+        $('#notes').append('<a class="noteLink" href="noteDetail.html?id='+ item.id +'">' +
             '<div class="note"><div class="noteDetails">' +
             '<p class="noteTitle">'+ item.title +'</p>' +
             '</div>' +
