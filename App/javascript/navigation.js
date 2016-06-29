@@ -2,6 +2,7 @@
     var init = function () {
         $('#button_menu').on('click', toggleMenu);
         $('*').on('click', closeMenu);
+        checkLogin();
     };
 
     window.addEventListener('load', init);
@@ -9,6 +10,15 @@
 })();
 
 var menuOpen = false;
+
+function checkLogin(){
+    if(readCookie("name")){
+            $('header ul').append('<a href="events.html"><li>Event</li></a>');
+            $('header ul').append('<a href="logout.html"><li>Logout</li></a>');
+            $('#registratiePagina').remove();
+            $('#loginPagina').remove();
+    }
+}
 
 function toggleMenu(){
     if(menuOpen == false)
