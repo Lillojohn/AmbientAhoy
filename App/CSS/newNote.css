@@ -9,7 +9,7 @@
   width: 100%;
 }
 
-#textField{
+.textField{
   font-size: 50px;
   width: 100%;
   min-height: 300px;
@@ -26,5 +26,5 @@
 #newNoteBox{
   margin-left: 30px;
   margin-right: 30px;
-  margin-top: 330px;
+  margin-top: 2vh;
 }

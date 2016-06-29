@@ -27,12 +27,17 @@
       </ul>
     </header>
 
+    <section id="notice">
+      <p></p>
+    </section>
+
     <form id="newNoteBox">
         <input class="input" id="title" type="name" name="title" placeholder="Titel"/>
         <br><br>
-        <textarea class="input" id="textField" placeholder="Beschrijving"></textarea>
+        <textarea class="input textField" id="problem" placeholder="Probleen"></textarea>
         <br>
-        <input id="fileUpload" type="file" name="imageUpload" />
+        <textarea class="input textField" id="solution" placeholder="Oplossing"></textarea>
+        <!--<input id="fileUpload" type="file" name="imageUpload" />-->
         <br><br>
         <input class="button" type="submit" value="Notitie aanmaken"/>
     </form>
@@ -43,6 +48,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TimelineLite.min.js"></script>
     <script src="javascript/cookie.js"></script>
     <script src="javascript/navigation.js"></script>
-    <script src="javascript/users.js"></script>
+    <script src="javascript/newNote.js"></script>
   </body>
 </html>

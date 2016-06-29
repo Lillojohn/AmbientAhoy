@@ -38,7 +38,7 @@ function ajaxloadEvents() {
 function loadEvents(data) {
 
     data.items.map(item => {
-        if(getUrlParameter("eventName") == item.name){
+        if(getUrlParameter("id") == item.id){
             itemInfo = item;
         }
     });
@@ -48,11 +48,23 @@ editInfo();
 }
 
 function editInfo(){
+    var imgpath = "";
+
+    if(itemInfo.id == 1){
+        imgpath = "img/hellokitty.png";
+    } else if (itemInfo.id == 2){
+        imgpath = "img/walnoten.png"
+    } else if(itemInfo.id == 3){
+        imgpath = "img/kip.jpg"
+    }
+
+    $('#bannerImg').attr('src', imgpath)
+
+
+
     $('#Datum').text('Datum: ' + itemInfo.date)
 
     $('#notes').children().remove();
-
-
 
     itemInfo.notes.map(item => {
         $('#notes').append('<a class="noteLink" href="noteDetail.html?id='+ item.id +'">' +
@@ -63,6 +75,6 @@ function editInfo(){
             '</a>')
     });
 
-
+    $('#newNote').attr('href', 'newNote.html?id=' + itemInfo.id)
 }
 

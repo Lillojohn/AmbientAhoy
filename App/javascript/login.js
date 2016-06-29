@@ -33,7 +33,7 @@ function login(e){
         passwordValue != "" && passwordValue != null){
         userData.items.map(function(item, index){
             if(item.email == emailValue){
-                succesLogin(item.name);
+                succesLogin(item.name, item.id);
                 loginSuccess = true;
                 setTimeout(function(){
                     window.location.href = 'index.html';
@@ -62,7 +62,8 @@ function users(data){
     userData = data;
 }
 
-function succesLogin(name){
+function succesLogin(name, id){
     createCookie("name", name, null);
+    createCookie("id", id, null);
     $('#notice').append('<p>Welkom ' + name + '</p>');
 }

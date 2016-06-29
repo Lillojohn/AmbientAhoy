@@ -43,4 +43,5 @@ function editInfo() {
     $('#title').text(noteInfo.title);
     $('#problem').text("Probleem: " + noteInfo.problem);
     $('#solution').text("Oplossing: " + noteInfo.solution);
+    $('#link').attr('href', 'http://localhost:63342/Ambient/AmbientAhoy/App/eventPage.html?id=' + noteInfo.event.id)
 }

@@ -31,37 +31,21 @@
     </ul>
 </header>
 <div id="banner">
-    <img id="bannerImg" src="img/hellokitty.png"/> <!-- De banner img moet dynamisch worden geladen per evenement-->
+    <img id="bannerImg"/> <!-- De banner img moet dynamisch worden geladen per evenement-->
 </div>
 <div id="details"><!--de supervisor en de schoonmakers per evenement moeten dynamisch er in worden geladen   -->
-    <p id="Datum">Datum: 16-03-2017</p><br>
+    <p id="Datum"></p><br>
     <p>Supervisor: Rimmert</p> <br>
     <p>Schoonmakers: Andreas, Tim, Johny, Amber</p>
 </div>
 <main>
     <section id="notes">
         <!-- Hier moeten dynamisch de notities in worden geladen en linken naar detail paginas van de desbetreffende notitie-->
-        <a class="noteLink" href="noteDetail.html">
-            <div class="note">
-                <div class="noteDetails">
-                    <p class="noteTitle">Title:Beker omgevallen</p><br>
-                    <p class="noteAutTime">Author: Andreas | Time: 12:45</p>
-                </div>
-            </div>
-        </a>
 
-        <a class="noteLink" href="noteDetail.html">
-            <div class="note">
-                <div class="noteDetails">
-                    <p class="noteTitle">Title:Nog meer afval</p><br>
-                    <p class="noteAutTime">Author: Tim | Time: 13:33</p>
-                </div>
-            </div>
-        </a>
 
     </section>
 
-    <a href="newNote.html">
+    <a id="newNote" href="newNote.html">
         <button id=placeNewNote>+</button>
     </a>
 
