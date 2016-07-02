@@ -1,0 +1,70 @@
+@font-face {
+    font-family: Manteka;
+    src: url("manteka.ttf"); }
+
+<<<<<<< HEAD
+.formBox{
+  width: 600px;
+  height: 300px;
+  margin-left: 210px;
+  margin-top: 500px;
+  margin-right: 500px;
+  padding: 50px;
+  padding-right: 1px;
+  background-color: rgba(38, 65, 65, 0.19);
+=======
+#notice {
+  margin-top: 20vh;
+}
+
+#notice p{
+  font-size: 50px;
+  text-align: center;
+  color: #ff9c8b;
+  height: 5vh;
+}
+
+#login {
+  margin-top: 5vh;
+}
+
+#login p {
+  text-align: center;
+}
+
+#login p a {
+  color: #77c9c9;
+  font-size: 50px;
+}
+
+#registerForm{
+  margin-left: 230px;
+  margin-top: 5vh;
+
+>>>>>>> users
+}
+
+.inputField{
+  width: 500px;
+  margin-bottom: 5px;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom: 2px solid black;
+  font-family: Manteka, serif;
+  font-size: 50px;
+  background-color: rgba(38, 65, 65, 0.06);
+}
+
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color: #000000;
+}
+
+.button{
+  font-family: Manteka, serif;
+  font-size: 50px;
+  background-color: #77c9c9;
+  border: none;
+  width: 200px;
+  border-radius: 5px;
+}

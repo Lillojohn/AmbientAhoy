@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+    <link href="CSS/reset.css" rel="stylesheet"/>
+    <link href="CSS/styles.css" rel="stylesheet"/>
+    <link href="CSS/style.css" rel="stylesheet"/>
+</head>
+<body>
+<header>
+    <button id="button_menu"></button>
+    <h1>CleanShot</h1>
+    <ul>
+        <a href="index.html">
+            <li>Home</li>
+        </a>
+        <a id="loginPagina" href="login.html">
+            <li>Login</li>
+        </a>
+        <a id="registratiePagina" href="register.html">
+            <li>Register</li>
+        </a>
+    </ul>
+</header>
+<!-- Dit moet worden laten zien als er niet is ingelogd.-->
+<h1 class="homeTitle cookieRemove">Welkom bij Cleanshot!</h1><br>
+<h2 class="homeSub cookieRemove">Log in en bekijk notities voor toekomstige evenementen in Ahoy!</h2><br>
+
+<a class="cookieRemove" href="login.html"><div class="boxButton"><p class="homeButton">Log in!</p></div></a>
+<a class="cookieRemove" href="register.html"><div class="boxButton"> <p class="homeButton" >Registreer</p></div></a>
+
+<!--dit moet worden laten zien als er wel is ingelogd.-->
+<h1 class="homeTitle cookieAdd">Welkom <div id="naam"></div>!</h1><!--Hier de naam van de gebruiker-->
+<h2 class="homeSub cookieAdd">Ga naar de evenementen pagina om te kijken naar notities die gemaakt zijn per evenement. Als je klaar bent log dan uit. Heeft u vragen stuur dan een email naar ahoyadmin@ahoy.nl</h2>
+<div id="logoutButton" class="boxButton cookieAdd"><a href="logout.html"><p class="homeButton">Log Uit</p></a> </div><!--deze knop moet de sessie eindigen en dus de gebruiker uitloggen.-->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenLite.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TimelineLite.min.js"></script>
+<script src="javascript/cookie.js"></script>
+<script src="javascript/navigation.js"></script>
+<script src="javascript/index.js"></script>
+</body>
+</html>

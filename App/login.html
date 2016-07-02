@@ -1,0 +1,53 @@
+<html>
+<head>
+<title>Log In</title>
+<link href="CSS/reset.css" rel="stylesheet"/>
+<link href="CSS/style.css" rel="stylesheet"/>
+<link href="CSS/register.css" rel="stylesheet"/>
+<link href="CSS/login.css" rel="stylesheet"/>
+</head>
+
+<body>
+<header>
+    <button id="button_menu"></button>
+    <h1>CleanShot</h1>
+    <ul>
+        <a href="index.html">
+            <li>Home</li>
+        </a>
+        <a id="loginPagina" href="login.html">
+            <li>Login</li>
+        </a>
+        <a id="registratiePagina" href="register.html">
+            <li>Register</li>
+        </a>
+    </ul>
+</header>
+
+<section id="notice">
+    <p></p>
+</section>
+<section id="login">
+    <p><a href="register.html">Heb je nog geen account?</a></p>
+</section>
+
+<form id="formLogin" class="form" method="POST">
+  <div class="formBox shadow">
+    <input id="email" class="inputField" type="email" name="email" placeholder="Email"/>
+    <br>
+    <input id="password" class="inputField" type="password" name="wachtwoord" placeholder="Wachtwoord"/>
+    <br><br>
+    <input class="button shadow" type="submit" value="Login"/>
+  </div>
+</form>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenLite.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TimelineLite.min.js"></script>
+<script src="javascript/navigation.js"></script>
+<script src="javascript/cookie.js"></script>
+<script src="javascript/login.js"></script>
+</body>
+
+</html>

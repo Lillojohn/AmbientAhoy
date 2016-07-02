@@ -1,0 +1,157 @@
+body {
+  background: #ffffff; }
+
+header {
+  height: 10vh;
+  width: 100%;
+  background: #97FFFF; }
+
+@font-face {
+  font-family: "Manteka";
+  src: url("manteka.ttf"); }
+.shadow {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
+
+main #events {
+  width: 100%; }
+  main #events .event {
+    width: 95%;
+    margin: 2.5%;
+    height: 20vh;
+    position: relative;
+    overflow: hidden; }
+    main #events .event h1 {
+      text-align: center;
+      width: 80%;
+      height: 30%;
+      font-size: 80px;
+      font-family: Manteka, Serif;
+      color: #ffffff;
+      margin: auto;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      z-index: 9999; }
+    main #events .event img {
+      height: 100%;
+      width: 100%;
+      -webkit-filter: blur(2px) grayscale(100%); }
+    main #events .event .clickAnimation {
+      background: #ffffff;
+      opacity: 0;
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      z-index: 1;
+      -moz-border-radius: 100%;
+      -webkit-border-radius: 100%;
+      border-radius: 100%;
+      -webkit-transition: all .2s ease;
+      -moz-transition: all .2s ease;
+      -ms-transition: all .2s ease;
+      -o-transition: all .2s ease;
+      transition: all .2s ease; }
+      .homeButton
+      {
+        font-size: 50px;
+      }
+      .homeTitle
+      {
+        font-size: 60px;
+        text-align: center;
+        margin-top: 5%;
+      }
+      .homeSub
+      {
+        font-size: 45px;
+        margin-top: 5%;
+        margin-bottom: 5%;
+        text-align: center;
+      }
+      .boxButton
+      {
+        text-align: center;
+        float: left;
+        margin-left: 12%;
+        height: 80px;
+        padding-top: 2%;
+        width: 30%;
+        border: solid #77c9c9 3px;
+        border-radius: 10px;
+        background: #77c9c9;
+        color: white;
+      }
+
+      .boxButton:visited
+      {
+        color: white;
+        text-decoration: none;
+      }
+      .boxButton:active
+      {
+        backgroud: #
+      }
+      #banner
+      {
+        width: 100%;
+        height: 350px;
+      }
+      #bannerImg
+      {
+        width: inherit;
+        height: inherit;
+      }
+      #details
+      {
+        width: 95%;
+        font-size: 60px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+      .note
+      {
+        margin-top: 1%;
+        width: 99%;
+        border: 2px solid black;
+        color: white;
+        background: #77c9c9;
+        padding-left: 5px;
+        text-decoration: none;
+      }
+      .noteLink:visited
+      {
+        color: white;
+        text-decoration: none;
+      }
+
+      .noteDetails
+      {
+        border-bottom: 2px solid black;
+      }
+      .noteTitle
+      {
+        font-size: 90px;
+        text-align: center;
+        margin: 20px;
+      }
+      .noteAutTime
+      {
+        font-size: 35px;
+      }
+
+    #placeNewNote
+    {
+      font-size: 80px;
+      margin-top: 2%;
+      border-radius: 50px;
+      width: 100px;
+      height: 100px;
+      border: 2px solid black;
+      text-align: center;
+      float: right;
+      background: #77c9c9
+    }
+
+/*# sourceMappingURL=styles.css.map */
